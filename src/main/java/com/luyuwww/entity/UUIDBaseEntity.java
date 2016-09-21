@@ -8,7 +8,7 @@ import javax.persistence.*;
  * Created by DaMo on 2016/9/20.
  */
 @MappedSuperclass
-public class OracleBaseEntity {
+public class UUIDBaseEntity {
     @Id
     @GeneratedValue(generator = "sysuuid")
     @GenericGenerator(name = "sysuuid", strategy = "uuid")

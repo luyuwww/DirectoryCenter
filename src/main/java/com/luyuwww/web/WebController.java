@@ -14,7 +14,6 @@ public class WebController {
 
     @RequestMapping(value = "/")
     public String index() {
-//        System.out.println(testService.test());
         return "index";
     }
     @Autowired

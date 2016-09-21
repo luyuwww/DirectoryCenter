@@ -1,8 +1,5 @@
 package com.luyuwww.entity;
 
-import com.gitlab.bootren.data.core.jpa.entity.BaseEntity;
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 
 /**
@@ -10,7 +7,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "test_a")
-public class TestA extends  OracleBaseEntity{
+public class TestA extends UUIDBaseEntity {
 
 
     private String name;
