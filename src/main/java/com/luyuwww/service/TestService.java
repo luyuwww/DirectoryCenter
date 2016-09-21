@@ -39,6 +39,10 @@ public class TestService {
         return all.size();
     }
 
+    public List<TestA> listAll(){
+        return testARepository.findAll();
+    }
+
     public void testJdbc(){
         List list = jdbcTemplate.queryForList("select * from d_file1");
         System.out.println(list.size());
