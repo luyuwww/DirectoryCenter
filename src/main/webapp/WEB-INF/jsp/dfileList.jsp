@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>测试列表</title>
+    <title>DFILE_LIST</title>
     <link href="${pageContext.request.contextPath}/res/js/bootstrap-3.0.3-dist/css/bootstrap.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/res/js/bootstrap-3.0.3-dist/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/res/js/self/theme.css" rel="stylesheet">
@@ -15,11 +15,12 @@
 <body>
 <div class="container">
     <h2>测试列表</h2>
-    <c:forEach var="test" items="${testa}" varStatus="count">
+    <c:forEach var="test" items="${dfileList}" varStatus="count">
         <div class="row">
-            <div class="col-md-1">${count.index+1}</div>
-            <div class="col-md-4">${test.name}</div>
-            <div class="col-md-4">${test.bz}</div>
+            <div class="col-lg-1">${count.index+1}</div>
+            <div class="col-sm-5">${test.title}</div>
+            <div class="col-md-2">${test.keyword}</div>
+            <div class="col-md-3">${test.syscode}</div>
         </div>
     </c:forEach>
 </div>

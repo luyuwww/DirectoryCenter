@@ -1,8 +1,13 @@
 package com.luyuwww.service;
 
+import com.luyuwww.entity.Dfile2;
 import com.luyuwww.entity.TestA;
+import com.luyuwww.repository.Dfile2Repository;
 import com.luyuwww.repository.TestARepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -40,7 +45,13 @@ public class TestService {
     }
 
     public List<TestA> listAll(){
-        return testARepository.findAll();
+        Pageable pa =  new PageRequest(0, 8);
+        return testARepository.findAll(pa).getContent();
+    }
+
+    public List<Dfile2> ListDfile2(Pageable pageable ){
+        List<Dfile2> result = dfile2Repository.findAll(pageable).getContent();
+        return result;
     }
 
     public void testJdbc(){
@@ -51,6 +62,9 @@ public class TestService {
 
     @Autowired
     TestARepository testARepository;
+
+    @Autowired
+    Dfile2Repository dfile2Repository;
 
     @Autowired
     private JdbcTemplate jdbcTemplate ;

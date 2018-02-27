@@ -26,7 +26,21 @@ public class WebController {
         model.addAttribute("testa" , testService.listAll());
         return "index";
     }
-    
+
+    /**
+     * 测试分页
+     * http://localhost:8080/dfile?page=1&size=18&sort=syscode
+     * @param pageable
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "/dfile")
+    public String dfile(Pageable pageable , Model model) {
+        model.addAttribute("dfileList" , testService.ListDfile2(pageable));
+        return "dfileList";
+    }
+
+
     @RequestMapping(value = "xl/list/data", method = RequestMethod.POST)
     @ResponseBody
     public Page<TestA> search(Pageable pageable , Model model){
